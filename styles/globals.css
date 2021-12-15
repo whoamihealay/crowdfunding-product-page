@@ -1,16 +1,88 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* ***** */
+/* Reset */
+/* ***** */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-  box-sizing: border-box;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Commissioner", sans-serif;
+  font-size: 1.125rem;
+  color: black;
+  background-color: white;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+#__next,
+.App {
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button {
+  border: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
