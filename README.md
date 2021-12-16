@@ -32,6 +32,7 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
+TBD
 
 ### Links
 
@@ -54,7 +55,11 @@ Users should be able to:
 
 ### What I learned
 
+TBD
+
 ### Continued development
+
+TBD
 
 ### Useful resources
 
