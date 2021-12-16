@@ -20,8 +20,8 @@ const Stats = ({ data }: StatsProps) => {
   return (
     <article className="bg-white rounded-lg text-center p-4">
       <div className="sm:flex sm:p-4">
-        <p className="p-4 text-sm">
-          <span>
+        <p className="p-4 text-base">
+          <span className="text-4xl text-black font-bold">
             {currency}
             {pledged}
           </span>
@@ -30,14 +30,14 @@ const Stats = ({ data }: StatsProps) => {
           {objective} backed
         </p>
         <hr className="w-1/4 m-auto sm:border-l-[1px] sm:border-solid sm:border-gray-100 sm:w-px sm:h-14 sm:opacity-50" />
-        <p className="p-4 text-sm">
-          <span>{backers}</span>
+        <p className="p-4 text-base">
+          <span className="text-4xl text-black font-bold">{backers}</span>
           <br />
           total backers
         </p>
         <hr className="w-1/4 m-auto sm:border-l-[1px] sm:border-solid sm:border-gray-100 sm:w-px sm:h-14 sm:opacity-50" />
-        <p className="p-4 text-sm">
-          <span>{days}</span>
+        <p className="p-4 text-base">
+          <span className="text-4xl text-black font-bold">{days}</span>
           <br />
           days left
         </p>

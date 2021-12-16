@@ -1,7 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import About from "../components/About";
 import Header from "../components/Header";
+import Pledge from "../components/Pledge";
 import Stats from "../components/Stats";
 import Title from "../components/Title";
 
@@ -18,7 +20,7 @@ const Home: NextPage = () => {
         bookmark: "",
       },
       title: "",
-      description: "",
+      description: [],
     },
     stats: {
       currency: "",
@@ -29,8 +31,19 @@ const Home: NextPage = () => {
         left: "",
       },
     },
-    about: {},
-    pledges: {},
+    about: {
+      title: "",
+      description: [],
+    },
+    pledges: [
+      {
+        name: "",
+        title: "",
+        pledge: 0,
+        description: [],
+        amount: 0,
+      },
+    ],
   });
 
   useEffect(() => {
@@ -53,8 +66,11 @@ const Home: NextPage = () => {
         <Header data={data.main} />
         <Title data={data.main} />
         <Stats data={data.stats} />
-        {/* <About /> */}
-        {/*  map <Pledges /> */}
+        <About data={data.about}>
+          {data?.pledges?.map((pledge) => (
+            <Pledge key={pledge?.name} data={pledge} />
+          ))}
+        </About>
       </main>
     </div>
   );

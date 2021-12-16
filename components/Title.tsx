@@ -7,7 +7,7 @@ type TitleProps = {
       bookmark: string;
     };
     title: string;
-    description: string;
+    description: string[];
   };
 };
 
@@ -27,7 +27,7 @@ const Title = ({ data }: TitleProps) => {
       <h1 className="text-black font-bold text-xl sm:text-2xl px-2 py-4 mt-4">
         {title}
       </h1>
-      <p className="text-sm p-2">{description}</p>
+      <p className="text-base p-2">{description}</p>
       <div className="flex justify-between items-center py-4">
         <button className="bg-cyan-bg rounded-[2rem] py-4 px-8 text-white font-bold cursor-pointer hover:bg-cyan-active">
           Back this project
