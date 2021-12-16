@@ -2,16 +2,12 @@
   "main": {
     "images": {
       "logo": "/images/logo.svg",
-      "title": "/images/logo-mastercraft.svg",
-      "bookmark": "/images/bookmark.svg",
+      "master": "/images/logo-mastercraft.svg",
+      "bookmark": "/images/icon-bookmark.svg",
       "open": "/images/icon-hamburger.svg",
       "close": {
         "menu": "/images/icon-close-menu.svg",
         "modal": "/images/icon-close-modal.svg"
-      },
-      "backgrounds": {
-        "mobile": "/images/image-hero-mobile.jpg",
-        "desktop": "/images/image-hero-desktop.jpg"
       }
     },
     "title": "Mastercraft Bamboo Monitor Riser",
