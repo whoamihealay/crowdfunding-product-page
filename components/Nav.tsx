@@ -10,9 +10,10 @@ type NavProps = {
       };
     };
   };
+  onClick: () => void;
 };
 
-const Nav = ({ data }: NavProps) => {
+const Nav = ({ data, onClick }: NavProps) => {
   const [open, setOpen] = useState(false);
   const [hide, setHide] = useState("hidden");
   const hamburger = data.images.open;
@@ -66,11 +67,18 @@ const Nav = ({ data }: NavProps) => {
           About
         </a>
         <hr className="ms:opacity-10 sm:hidden" />
-        <a className="ms:p-4 ms:text-black ms:font-bold sm:text-white" href="#">
+        <a
+          className="ms:p-4 ms:text-black ms:font-bold sm:text-white"
+          href="#discover"
+        >
           Discover
         </a>
         <hr className="ms:opacity-10 sm:hidden" />
-        <a className="ms:p-4 ms:text-black ms:font-bold sm:text-white" href="#">
+        <a
+          className="ms:p-4 ms:text-black ms:font-bold sm:text-white"
+          href="#"
+          onClick={onClick}
+        >
           Get Started
         </a>
       </div>

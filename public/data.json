@@ -34,6 +34,11 @@
   },
   "pledges": [
     {
+      "name": "noreward",
+      "title": "Pledge with no reward",
+      "description": "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.a email."
+    },
+    {
       "name": "bamboo",
       "title": "Bamboo Stand",
       "pledge": "25",
@@ -60,5 +65,21 @@
       ],
       "amount": "0"
     }
-  ]
+  ],
+  "selection": {
+    "header": {
+      "title": "Back this project",
+      "hook": "Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?"
+    }
+  },
+  "thanks": {
+    "title": "Thanks for your support!",
+    "description": [
+      "Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed."
+    ],
+    "cta": "Got it!",
+    "images": {
+      "check": "/images/icon-check.svg"
+    }
+  }
 }
