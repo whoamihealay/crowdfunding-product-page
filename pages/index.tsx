@@ -64,7 +64,7 @@ const Home: NextPage = () => {
     },
   });
   const [selectionMenu, setSelectionMenu] = useState(false);
-  const [thanks, setThanks] = useState(true);
+  const [thanks, setThanks] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
