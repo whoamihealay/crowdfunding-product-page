@@ -1,13 +1,8 @@
 import { useEffect, useState } from "react";
+import { PledgesInterface } from "../@types/DataInterface";
 
 export type PledgeProps = {
-  data: {
-    name: string;
-    title: string;
-    pledge: number;
-    description: string[];
-    amount: number;
-  };
+  data: PledgesInterface;
   onClick: () => void;
 };
 

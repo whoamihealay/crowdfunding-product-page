@@ -1,31 +1,25 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { MainInterface } from "../@types/DataInterface";
 
 type NavProps = {
-  data: {
-    images: {
-      open: string;
-      close: {
-        menu: string;
-      };
-    };
-  };
-  onClick: () => void;
+  data: MainInterface;
+  onClick(): void;
 };
 
 const Nav = ({ data, onClick }: NavProps) => {
-  const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   const [hide, setHide] = useState("hidden");
   const hamburger = data.images.open;
   const closeMenu = data.images.close.menu;
 
   const handleToggle = () => {
-    setOpen(!open);
+    setOpenMenu(!openMenu);
   };
 
   const ToggleButton = () => {
     if (hamburger && closeMenu != null) {
-      if (open) {
+      if (openMenu) {
         return <Image src={closeMenu} alt="open" height={15} width={16} />;
       } else {
         return (
@@ -44,12 +38,12 @@ const Nav = ({ data, onClick }: NavProps) => {
   };
 
   useEffect(() => {
-    if (open === true) {
+    if (openMenu === true) {
       setHide("flex");
     } else {
       setHide("hidden");
     }
-  }, [open]);
+  }, [openMenu]);
 
   return (
     <nav>

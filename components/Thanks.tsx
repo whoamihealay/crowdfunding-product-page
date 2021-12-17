@@ -1,14 +1,8 @@
 import Image from "next/image";
+import { ThanksInterface } from "../@types/DataInterface";
 
 type ThanksProps = {
-  data: {
-    title: string;
-    description: string[];
-    cta: string;
-    images: {
-      check: string;
-    };
-  };
+  data: ThanksInterface;
   onClick: () => void;
 };
 

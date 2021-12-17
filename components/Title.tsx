@@ -1,21 +1,16 @@
 import Image from "next/image";
+import { MainInterface } from "../@types/DataInterface";
+import Bookmark from "./Bookmark";
 
-type TitleProps = {
-  data: {
-    images: {
-      master: string;
-      bookmark: string;
-    };
-    title: string;
-    description: string[];
-  };
-};
+interface TitleInterface {
+  data: MainInterface;
+}
 
-const Title = ({ data }: TitleProps) => {
-  const title = data?.title;
-  const master = data?.images?.master;
-  const bookmark = data.images.bookmark;
+const Title = ({ data }: TitleInterface) => {
+  const title = data.title;
   const description = data.description;
+  const master = data.images.master;
+  const bookmark = data.images.bookmark;
 
   return (
     <article className="relative bg-white rounded-lg text-center px-6 py-4 sm:py-12">
@@ -36,7 +31,8 @@ const Title = ({ data }: TitleProps) => {
           {bookmark ? (
             <div className="relative flex items-center gap-2 sm:bg-gray-100 rounded-[4rem]">
               <div className="hover:opacity-50 flex items-center">
-                <Image src={bookmark} alt="Bookmark" width={56} height={56} />
+                {/* <Image src={bookmark} alt="Bookmark" width={56} height={56} /> */}
+                <Bookmark className="text-cyan-active fill-white" />
               </div>
               <span className="hidden sm:block pr-4 font-bold text-body-gray">
                 Bookmark

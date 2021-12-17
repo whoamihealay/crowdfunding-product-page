@@ -11,58 +11,10 @@ import Stats from "../components/Stats";
 import Thanks from "../components/Thanks";
 import Title from "../components/Title";
 
+import { DataInterface } from "../@types/DataInterface";
+
 const Home: NextPage = () => {
-  const [data, setData] = useState({
-    main: {
-      images: {
-        logo: "",
-        open: "",
-        close: {
-          menu: "",
-        },
-        master: "",
-        bookmark: "",
-      },
-      title: "",
-      description: [],
-    },
-    stats: {
-      currency: "",
-      objective: "",
-      pledged: "",
-      backers: "",
-      days: {
-        left: "",
-      },
-    },
-    about: {
-      title: "",
-      description: [],
-    },
-    pledges: [
-      {
-        name: "",
-        title: "",
-        pledge: 0,
-        description: [],
-        amount: 0,
-      },
-    ],
-    selection: {
-      header: {
-        title: "",
-        hook: "",
-      },
-    },
-    thanks: {
-      title: "",
-      description: [],
-      cta: "",
-      images: {
-        check: "",
-      },
-    },
-  });
+  const [data, setData] = useState<DataInterface | null>(null);
   const [selectionMenu, setSelectionMenu] = useState(false);
   const [thanks, setThanks] = useState(false);
 
@@ -82,43 +34,42 @@ const Home: NextPage = () => {
       <Head>
         <title>Frontend Mentor | Crowdfunding product page</title>
       </Head>
-      <main className="flex flex-col gap-6 px-4 mx-auto max-w-3xl ">
-        <Header
-          data={data.main}
-          onClick={() => setSelectionMenu(!selectionMenu)}
-        />
-        <Title data={data.main} />
-        <Stats data={data.stats} />
-        <About data={data.about}>
-          {data?.pledges?.map((pledge) => (
-            <Pledge
-              key={pledge?.name}
-              data={pledge}
-              onClick={() => setSelectionMenu(true)}
-            />
-          ))}
-        </About>
-        {selectionMenu ? (
-          <Selection
-            data={data.selection}
-            onClick={() => setSelectionMenu(false)}
-          >
+      {data ? (
+        <main className="flex flex-col gap-6 px-4 mx-auto max-w-3xl ">
+          <Header data={data.main} onClick={() => setSelectionMenu(true)} />
+          <Title data={data.main} />
+          <Stats data={data.stats} />
+          <About data={data.about}>
             {data?.pledges?.map((pledge) => (
-              <SelectionPledge
+              <Pledge
                 key={pledge?.name}
                 data={pledge}
-                onClick={() => {
-                  setSelectionMenu(false);
-                  setThanks(true);
-                }}
+                onClick={() => setSelectionMenu(true)}
               />
             ))}
-          </Selection>
-        ) : null}
-        {thanks ? (
-          <Thanks data={data.thanks} onClick={() => setThanks(false)} />
-        ) : null}
-      </main>
+          </About>
+        </main>
+      ) : null}
+      {data && selectionMenu ? (
+        <Selection
+          data={data.selection}
+          onClick={() => setSelectionMenu(false)}
+        >
+          {data?.pledges?.map((pledge) => (
+            <SelectionPledge
+              key={pledge?.name}
+              data={pledge}
+              onClick={() => {
+                setSelectionMenu(false);
+                setThanks(true);
+              }}
+            />
+          ))}
+        </Selection>
+      ) : null}
+      {data && thanks ? (
+        <Thanks data={data.thanks} onClick={() => setThanks(false)} />
+      ) : null}
       <Footer />
     </div>
   );

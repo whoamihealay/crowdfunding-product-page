@@ -1,13 +1,7 @@
+import { StatsInterface } from "../@types/DataInterface";
+
 type StatsProps = {
-  data: {
-    currency: string;
-    objective: string;
-    pledged: string;
-    backers: string;
-    days: {
-      left: string;
-    };
-  };
+  data: StatsInterface;
 };
 
 const Stats = ({ data }: StatsProps) => {
@@ -15,7 +9,7 @@ const Stats = ({ data }: StatsProps) => {
   const objective = data.objective;
   const pledged = data.pledged;
   const backers = data.backers;
-  const days = data.days.left;
+  const daysLeft = data.days.left;
 
   return (
     <article className="bg-white rounded-lg text-center p-4">
@@ -37,7 +31,7 @@ const Stats = ({ data }: StatsProps) => {
         </p>
         <hr className="w-1/4 m-auto sm:border-l-[1px] sm:border-solid sm:border-gray-100 sm:w-px sm:h-14 sm:opacity-50" />
         <p className="p-4 text-base">
-          <span className="text-4xl text-black font-bold">{days}</span>
+          <span className="text-4xl text-black font-bold">{daysLeft}</span>
           <br />
           days left
         </p>

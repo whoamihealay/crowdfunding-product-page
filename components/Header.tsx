@@ -1,21 +1,14 @@
 import Image from "next/image";
+import { MainInterface } from "../@types/DataInterface";
 import Nav from "./Nav";
 
 type HeaderProps = {
-  data: {
-    images: {
-      logo: string;
-      open: string;
-      close: {
-        menu: string;
-      };
-    };
-  };
-  onClick: () => void;
+  data: MainInterface;
+  onClick(): void;
 };
 
 const Header = ({ data, onClick }: HeaderProps) => {
-  const logo = data?.images?.logo;
+  const logo: string = data.images.logo;
 
   return (
     <header

@@ -1,11 +1,7 @@
+import { PledgesInterface } from "../@types/DataInterface";
+
 type PledgeProps = {
-  data: {
-    name: string;
-    title: string;
-    pledge: number;
-    description: string[];
-    amount: number;
-  };
+  data: PledgesInterface;
   onClick: () => void;
 };
 

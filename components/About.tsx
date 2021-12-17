@@ -1,10 +1,8 @@
 import { ReactNode } from "react";
+import { AboutInterface } from "../@types/DataInterface";
 
 type AboutProps = {
-  data: {
-    title: string;
-    description: string[];
-  };
+  data: AboutInterface;
   children: ReactNode;
 };
 

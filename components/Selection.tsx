@@ -1,14 +1,10 @@
 import Image from "next/image";
 import { ReactNode } from "react";
+import { SelectionInterface } from "../@types/DataInterface";
 import { PledgeProps } from "./Pledge";
 
 type SelectionProps = {
-  data: {
-    header: {
-      title: string;
-      hook: string;
-    };
-  };
+  data: SelectionInterface;
   children: ReactNode;
   onClick: () => void;
 };
