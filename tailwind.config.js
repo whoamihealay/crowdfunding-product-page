@@ -14,7 +14,7 @@ module.exports = {
         "body-gray": "hsl(0, 0%, 48%)",
         "bg-cream": "hsl(230, 100%, 99%)",
         "cyan-active": "hsl(176, 72%, 28%)",
-        "cyan-bg": "hsl(176, 50%, 47%)",
+        "cyan-bg": "#3cb4ac",
       },
       screens: {
         ms: { max: "640px" },

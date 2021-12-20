@@ -35,8 +35,10 @@ const Home: NextPage = () => {
         <title>Frontend Mentor | Crowdfunding product page</title>
       </Head>
       {data ? (
-        <main className="flex flex-col gap-6 px-4 mx-auto max-w-3xl ">
-          <Header data={data.main} onClick={() => setSelectionMenu(true)} />
+        <Header data={data.main} onClick={() => setSelectionMenu(true)} />
+      ) : null}
+      {data ? (
+        <main className="flex flex-col gap-6 px-4 mx-auto max-w-3xl pt-60">
           <Title data={data.main} />
           <Stats data={data.stats} />
           <About data={data.about}>

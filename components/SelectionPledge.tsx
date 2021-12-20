@@ -19,7 +19,7 @@ const SelectionPledge = ({ data, onClick }: PledgeProps) => {
           type="radio"
           name="pledges"
           id={name}
-          className="w-6 h-6 opacity-50 accent-cyan-bg"
+          className="w-6 h-6 checked:accent-cyan-400"
         />
         <div>
           <label className="font-bold text-black" htmlFor={name}>

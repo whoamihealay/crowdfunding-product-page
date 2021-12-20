@@ -26,7 +26,7 @@ const Pledge = ({ data, onClick }: PledgeProps) => {
   if (name !== "noreward") {
     return (
       <article
-        className={`${disable} border-2 border-solid border-gray-100 rounded-lg p-4 text-base flex flex-col gap-6 sm:p-12`}
+        className={`${disable} border-2 border-solid border-gray-100 rounded-lg p-4 text-base flex flex-col gap-6 sm:p-12 scroll-mt-24`}
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
           <h3 className="font-bold text-black">{title}</h3>

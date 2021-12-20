@@ -12,7 +12,10 @@ const About = ({ data, children }: AboutProps) => {
   const description = data.description;
 
   return (
-    <article id="about" className="bg-white rounded-lg text-left p-4">
+    <article
+      id="about"
+      className="bg-white rounded-lg text-left p-4 scroll-mt-12"
+    >
       <h2 className="text-lg font-bold text-black py-4">{title}</h2>
       {description.map((paragraph) => (
         <p key={paragraph} className="text-base py-4">
